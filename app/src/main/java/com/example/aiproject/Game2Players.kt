@@ -10,7 +10,10 @@ class Game2Players {
     private var playerTurn: Int = 1
     var point1: Int = 0
     var point2: Int = 0
-
+    val mark: String
+        get() {
+            return if (playerTurn == 1) "X" else "O"
+        }
     private var board = arrayOf(
         intArrayOf(0, 0, 0),
         intArrayOf(0, 0, 0),
@@ -54,7 +57,15 @@ class Game2Players {
         val resLine = isEnd()
         if (resLine == null)
             playerTurn = 3 - playerTurn
+        else{
+            when(playerTurn)
+            {
+                1->++point1
+                2->++point2
+            }
 
+
+        }
         return resLine
     }
 
