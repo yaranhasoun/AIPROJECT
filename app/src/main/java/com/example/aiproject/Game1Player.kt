@@ -71,7 +71,9 @@ class Game1Player {
         var pos: Position = Position(0, 0)
         var available = availableBox()
         for (node in available) {
+            board[node.row][node.column]=2
             var score = bestMove(node, 2, true, MIN, MAX)
+            board[node.row][node.column]=0
             if (bestVal < score) {
                 bestVal = score;
                 pos = node
