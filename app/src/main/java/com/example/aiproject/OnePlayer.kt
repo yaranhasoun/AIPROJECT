@@ -1,4 +1,3 @@
-
 package com.example.aiproject
 
 import android.support.v7.app.AppCompatActivity
@@ -7,9 +6,8 @@ import android.support.v4.content.ContextCompat
 import android.widget.Button
 import android.widget.TextView
 
-class MainActivity2 : AppCompatActivity() {
-
-    private lateinit var game: Game2Players
+class OnePlayer : AppCompatActivity() {
+    private lateinit var game: Game1Player
     private lateinit var one: TextView
     private lateinit var two: TextView
     private lateinit var three: TextView
@@ -23,6 +21,51 @@ class MainActivity2 : AppCompatActivity() {
     private lateinit var home: Button
     private lateinit var player1Points: TextView
     private lateinit var player2Points: TextView
+    private lateinit var map: HashMap<String, TextView>
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_one_player)
+        game = Game1Player()
+        init()
+        updatePoints()
+
+    }
+
+    private fun onTurnPlayed(box: TextView, position: Position) {
+        if (box.text.isEmpty()) {
+            box.text = game.mark
+
+            var resLine = game.playHuman(position)
+            if (resLine != null) {
+                updatePoints()
+                disableBoxes()
+                drawWinnerLine(resLine)
+            }
+            if(game.isDraw()){
+                updatePoints()
+                disableBoxes()
+            }
+            var p=game.bestPos()
+            resLine=game.playAi(p)
+
+            var s:String= p.row.toString()+p.column.toString()
+            map[s]!!.text ="O"
+            if (resLine != null) {
+                updatePoints()
+                disableBoxes()
+                drawWinnerLine(resLine)
+            }
+            if(game.isDraw()){
+                updatePoints()
+                disableBoxes()
+            }
+
+        }
+    }
+
+
 
     private fun init(){
 
@@ -53,22 +96,14 @@ class MainActivity2 : AppCompatActivity() {
             game.resetGame()
             resetBoard()
         }
+        map=
+        hashMapOf("00" to one, "01" to two, "02" to three,
+            "10" to four, "11" to five, "12" to six,
+            "20" to seven, "21" to eight, "22" to nine
+        )
 
 
     }
-
-    private fun onTurnPlayed(box: TextView, position: Position) {
-        if (box.text.isEmpty()) {
-            box.text = game.mark
-            val resLine = game.playTurn(position)
-            if (resLine != null) {
-                updatePoints()
-                disableBoxes()
-                drawWinnerLine(resLine)
-            }
-        }
-    }
-
     private fun drawWinnerLine(resLine: Line) {
         val (winningBoxes, background) = when (resLine) {
             Line.R0 -> Pair(listOf(one, two, three), R.drawable.horizontal_line)
@@ -89,31 +124,6 @@ class MainActivity2 : AppCompatActivity() {
             box.background = ContextCompat.getDrawable(MainActivity2@ this, background)
         }
     }
-
-    private fun disableBoxes() {
-        one.isEnabled = false
-        two.isEnabled = false
-        three.isEnabled = false
-        four.isEnabled = false
-        five.isEnabled = false
-        six.isEnabled = false
-        seven.isEnabled = false
-        eight.isEnabled = false
-        nine.isEnabled = false
-    }
-
-    private fun updatePoints() {
-        player1Points.text = "Player 1 Points: ${game.point1}"
-        player2Points.text = "Player 2 Points: ${game.point2}"
-    }
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main2)
-        game = Game2Players()
-        init()
-        updatePoints()
-    }
-
     private fun resetBoard() {
         one.text = ""
         two.text = ""
@@ -142,5 +152,20 @@ class MainActivity2 : AppCompatActivity() {
         seven.isEnabled = true
         eight.isEnabled = true
         nine.isEnabled = true
+    }
+    private fun updatePoints() {
+        player1Points.text = "Player 1 Points: ${game.point1}"
+        player2Points.text = "Player 2 Points: ${game.point2}"
+    }
+    private fun disableBoxes() {
+        one.isEnabled = false
+        two.isEnabled = false
+        three.isEnabled = false
+        four.isEnabled = false
+        five.isEnabled = false
+        six.isEnabled = false
+        seven.isEnabled = false
+        eight.isEnabled = false
+        nine.isEnabled = false
     }
 }

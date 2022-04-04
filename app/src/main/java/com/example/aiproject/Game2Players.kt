@@ -1,7 +1,5 @@
 package com.example.aiproject
 
-import android.icu.text.Transliterator
-
 
 
 
@@ -52,6 +50,7 @@ class Game2Players {
     }
 
     fun playTurn(p: Position): Line? {
+
         board[p.row][p.column] = playerTurn
 
         val resLine = isEnd()
@@ -63,12 +62,9 @@ class Game2Players {
                 1->++point1
                 2->++point2
             }
-
-
         }
         return resLine
     }
-
 
 }
 
