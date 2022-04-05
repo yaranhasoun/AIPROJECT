@@ -4,59 +4,64 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#A2CDD3"
-    tools:context=".MainActivity">
-
-    <pl.droidsonroids.gif.GifImageView
-        android:id="@+id/gif"
-        android:layout_width="414dp"
-
-        android:layout_height="313dp"
-
-        android:src="@drawable/uu"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.666"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.074" />
+    tools:context=".ChoseLevel"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="-456dp">
 
     <Button
-        android:id="@+id/players2"
+        android:id="@+id/hard"
         android:layout_width="279dp"
-        android:layout_height="51dp"
-        android:background="#CB2F343D"
-        android:fontFamily="sans-serif-medium"
-        android:onClick="start2Players"
-        android:shadowColor="#2F343D"
-        android:text="Two Players"
-        android:textColor="#FFFFFF"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gif"
-        app:layout_constraintVertical_bias="0.299"
-        tools:fontFamily="casual"
-        tools:textSize="20dp" />
-
-    <Button
-        android:id="@+id/player1"
-        android:layout_width="279dp"
-        android:layout_height="51dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="100dp"
         android:background="#CB2F343D"
         android:fontFamily="sans-serif-medium"
         android:onClick="start1Player"
         android:shadowColor="#2F343D"
-        android:text="One Player"
+        android:text="Hard"
         android:textColor="#FFFFFF"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/players2"
-        app:layout_constraintVertical_bias="0.178"
         tools:fontFamily="casual"
-        tools:textSize="20dp" />
+        tools:textSize="20sp" />
+
+    <Button
+        android:id="@+id/easy"
+        android:layout_width="279dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="25dp"
+        android:background="#CB2F343D"
+        android:fontFamily="sans-serif-medium"
+        android:onClick="start1Player"
+        android:shadowColor="#2F343D"
+        android:text="Easy"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        tools:fontFamily="casual"
+        tools:textSize="20sp" />
+
+    <Button
+        android:id="@+id/medium"
+        android:layout_width="279dp"
+        android:layout_height="51dp"
+        android:layout_marginBottom="25dp"
+        android:background="#CB2F343D"
+        android:fontFamily="sans-serif-medium"
+        android:onClick="start1Player"
+        android:shadowColor="#2F343D"
+        android:text="medium"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/hard"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:fontFamily="casual"
+        tools:textSize="20sp" />
 
 </android.support.constraint.ConstraintLayout>

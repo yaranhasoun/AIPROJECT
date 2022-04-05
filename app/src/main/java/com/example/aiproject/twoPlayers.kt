@@ -1,13 +1,14 @@
 
 package com.example.aiproject
 
-import android.support.v7.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
 import android.support.v4.content.ContextCompat
+import android.support.v7.app.AppCompatActivity
 import android.widget.Button
 import android.widget.TextView
 
-class MainActivity2 : AppCompatActivity() {
+class twoPlayers : AppCompatActivity() {
 
     private lateinit var game: Game2Players
     private lateinit var one: TextView
@@ -52,6 +53,12 @@ class MainActivity2 : AppCompatActivity() {
         restart.setOnClickListener {
             game.resetGame()
             resetBoard()
+        }
+        home.setOnClickListener {
+
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+
         }
 
 
@@ -113,7 +120,7 @@ class MainActivity2 : AppCompatActivity() {
         init()
         updatePoints()
     }
-
+    override fun onBackPressed() {}
     private fun resetBoard() {
         one.text = ""
         two.text = ""

@@ -1,5 +1,6 @@
 package com.example.aiproject
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v4.content.ContextCompat
@@ -23,10 +24,12 @@ class OnePlayer : AppCompatActivity() {
     private lateinit var player2Points: TextView
     private lateinit var map: HashMap<String, TextView>
 
+    override fun onBackPressed() {}
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_one_player)
+
         game = Game1Player()
         init()
         updatePoints()
@@ -47,25 +50,33 @@ class OnePlayer : AppCompatActivity() {
                 updatePoints()
                 disableBoxes()
             }
-            var p=game.bestPos()
-            resLine=game.playAi(p)
+            if(!game.isDraw() && resLine==null ) {
 
-            var s:String= p.row.toString()+p.column.toString()
-            map[s]!!.text ="O"
-            if (resLine != null) {
-                updatePoints()
-                disableBoxes()
-                drawWinnerLine(resLine)
-            }
-            if(game.isDraw()){
-                updatePoints()
-                disableBoxes()
+              var p = when(game.level){
+                    "hard","medium"->game.bestPos()
+                    "easy"->game.randomPos()
+
+                  else -> {game.randomPos()}
+              }
+
+                resLine = game.playAi(p)
+
+                var s: String = p.row.toString() + p.column.toString()
+                if (map[s]!!.text .isEmpty())
+                    map[s]!!.text = "O"
+                if (resLine != null) {
+                    updatePoints()
+                    disableBoxes()
+                    drawWinnerLine(resLine)
+                }
+                if (game.isDraw()) {
+                    updatePoints()
+                    disableBoxes()
+                }
             }
 
         }
     }
-
-
 
     private fun init(){
 
@@ -96,12 +107,18 @@ class OnePlayer : AppCompatActivity() {
             game.resetGame()
             resetBoard()
         }
+        home.setOnClickListener {
+
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+
+        }
         map=
         hashMapOf("00" to one, "01" to two, "02" to three,
             "10" to four, "11" to five, "12" to six,
             "20" to seven, "21" to eight, "22" to nine
         )
-
+        game.level= intent.getStringExtra("level").toString()
 
     }
     private fun drawWinnerLine(resLine: Line) {
@@ -121,7 +138,7 @@ class OnePlayer : AppCompatActivity() {
         }
 
         winningBoxes.forEach { box ->
-            box.background = ContextCompat.getDrawable(MainActivity2@ this, background)
+            box.background = ContextCompat.getDrawable(onePlayer@ this, background)
         }
     }
     private fun resetBoard() {
