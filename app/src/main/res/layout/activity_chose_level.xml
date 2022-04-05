@@ -4,27 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#A2CDD3"
     tools:context=".ChoseLevel"
     tools:layout_editor_absoluteX="0dp"
     tools:layout_editor_absoluteY="-456dp">
-
-    <Button
-        android:id="@+id/hard"
-        android:layout_width="279dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="100dp"
-        android:background="#CB2F343D"
-        android:fontFamily="sans-serif-medium"
-        android:onClick="start1Player"
-        android:shadowColor="#2F343D"
-        android:text="Hard"
-        android:textColor="#FFFFFF"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:fontFamily="casual"
-        tools:textSize="20sp" />
 
     <Button
         android:id="@+id/easy"
@@ -42,7 +25,25 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintVertical_bias="0.997"
+        tools:fontFamily="casual"
+        tools:textSize="20sp" />
+
+    <Button
+        android:id="@+id/hard"
+        android:layout_width="279dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="208dp"
+        android:background="#CB2F343D"
+        android:fontFamily="sans-serif-medium"
+        android:onClick="start1Player"
+        android:shadowColor="#2F343D"
+        android:text="Hard"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         tools:fontFamily="casual"
         tools:textSize="20sp" />
 
@@ -50,7 +51,7 @@
         android:id="@+id/medium"
         android:layout_width="279dp"
         android:layout_height="51dp"
-        android:layout_marginBottom="25dp"
+        android:layout_marginBottom="24dp"
         android:background="#CB2F343D"
         android:fontFamily="sans-serif-medium"
         android:onClick="start1Player"
@@ -63,5 +64,22 @@
         app:layout_constraintStart_toStartOf="parent"
         tools:fontFamily="casual"
         tools:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="352dp"
+        android:layout_height="113dp"
+        android:fontFamily="@font/arbutus_slab"
+        android:gravity="center"
+        android:text="Choose Difficulty Level"
+        android:textColor="#E82F343D"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/easy"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.666" />
 
 </android.support.constraint.ConstraintLayout>

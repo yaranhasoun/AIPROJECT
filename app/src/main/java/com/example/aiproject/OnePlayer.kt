@@ -1,14 +1,17 @@
 package com.example.aiproject
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v4.content.ContextCompat
+import android.view.View
 import android.widget.Button
 import android.widget.TextView
 
 class OnePlayer : AppCompatActivity()  {
     private lateinit var game: Game1Player
+    private lateinit var tie: TextView
     private lateinit var one: TextView
     private lateinit var two: TextView
     private lateinit var three: TextView
@@ -49,6 +52,7 @@ class OnePlayer : AppCompatActivity()  {
             if(game.isDraw()){
                 updatePoints()
                 disableBoxes()
+                tie.visibility = View.VISIBLE;
             }
             if(!game.isDraw() && resLine==null ) {
 
@@ -72,6 +76,7 @@ class OnePlayer : AppCompatActivity()  {
                 if (game.isDraw()) {
                     updatePoints()
                     disableBoxes()
+                    tie.visibility = View.VISIBLE;
                 }
             }
 
@@ -93,7 +98,8 @@ class OnePlayer : AppCompatActivity()  {
         home = findViewById(R.id.homeBtn)
         player1Points = findViewById(R.id.player_one_score)
         player2Points = findViewById(R.id.player_two_score)
-
+        tie=findViewById(R.id.tie)
+        tie.visibility = View.INVISIBLE;
         one.setOnClickListener { onTurnPlayed(one, Position(0, 0)) }
         two.setOnClickListener { onTurnPlayed(two, Position(0, 1)) }
         three.setOnClickListener { onTurnPlayed(three, Position(0, 2)) }
@@ -105,6 +111,7 @@ class OnePlayer : AppCompatActivity()  {
         nine.setOnClickListener { onTurnPlayed(nine, Position(2, 2)) }
         restart.setOnClickListener {
             game.resetGame()
+            tie.visibility = View.INVISIBLE;
             resetBoard()
         }
         home.setOnClickListener {
@@ -141,6 +148,7 @@ class OnePlayer : AppCompatActivity()  {
             box.background = ContextCompat.getDrawable(this, background)
         }
     }
+    @SuppressLint("ResourceAsColor")
     private fun resetBoard() {
         one.text = ""
         two.text = ""
@@ -151,15 +159,16 @@ class OnePlayer : AppCompatActivity()  {
         seven.text = ""
         eight.text = ""
         nine.text = ""
-        one.background = null
+
+        one.setBackgroundResource(R.color.white1)
         two.background = null
-        three.background = null
+        three.setBackgroundResource(R.color.white1)
         four.background = null
-        five.background = null
+        five.setBackgroundResource(R.color.white1)
         six.background = null
-        seven.background = null
+        seven.setBackgroundResource(R.color.white1)
         eight.background = null
-        nine.background = null
+        nine.setBackgroundResource(R.color.white1)
         one.isEnabled = true
         two.isEnabled = true
         three.isEnabled = true
@@ -171,8 +180,8 @@ class OnePlayer : AppCompatActivity()  {
         nine.isEnabled = true
     }
     private fun updatePoints() {
-        player1Points.text = "Player 1 Points: ${game.point1}"
-        player2Points.text = "Player 2 Points: ${game.point2}"
+        player1Points.text = "Player Points: ${game.point1}"
+        player2Points.text = "AI Points: ${game.point2}"
     }
     private fun disableBoxes() {
         one.isEnabled = false

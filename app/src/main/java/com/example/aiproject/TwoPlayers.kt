@@ -5,12 +5,14 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
+import android.view.View
 import android.widget.Button
 import android.widget.TextView
 
 class TwoPlayers : AppCompatActivity() {
 
     private lateinit var game: Game2Players
+    private lateinit var tie: TextView
     private lateinit var one: TextView
     private lateinit var two: TextView
     private lateinit var three: TextView
@@ -40,7 +42,8 @@ class TwoPlayers : AppCompatActivity() {
         home = findViewById(R.id.homeBtn)
         player1Points = findViewById(R.id.player_one_score)
         player2Points = findViewById(R.id.player_two_score)
-
+        tie=findViewById(R.id.tie)
+        tie.visibility = View.INVISIBLE;
         one.setOnClickListener { onTurnPlayed(one, Position(0, 0)) }
         two.setOnClickListener { onTurnPlayed(two, Position(0, 1)) }
         three.setOnClickListener { onTurnPlayed(three, Position(0, 2)) }
@@ -52,6 +55,7 @@ class TwoPlayers : AppCompatActivity() {
         nine.setOnClickListener { onTurnPlayed(nine, Position(2, 2)) }
         restart.setOnClickListener {
             game.resetGame()
+            tie.visibility = View.INVISIBLE;
             resetBoard()
         }
         home.setOnClickListener {
@@ -72,6 +76,11 @@ class TwoPlayers : AppCompatActivity() {
                 updatePoints()
                 disableBoxes()
                 drawWinnerLine(resLine)
+            }
+            if(game.isDraw()){
+                updatePoints()
+                disableBoxes()
+                tie.visibility = View.VISIBLE;
             }
         }
     }
@@ -131,15 +140,15 @@ class TwoPlayers : AppCompatActivity() {
         seven.text = ""
         eight.text = ""
         nine.text = ""
-        one.background = null
+        one.setBackgroundResource(R.color.white1)
         two.background = null
-        three.background = null
+        three.setBackgroundResource(R.color.white1)
         four.background = null
-        five.background = null
+        five.setBackgroundResource(R.color.white1)
         six.background = null
-        seven.background = null
+        seven.setBackgroundResource(R.color.white1)
         eight.background = null
-        nine.background = null
+        nine.setBackgroundResource(R.color.white1)
         one.isEnabled = true
         two.isEnabled = true
         three.isEnabled = true

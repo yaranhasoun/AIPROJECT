@@ -10,14 +10,15 @@
     tools:layout_editor_absoluteY="64dp">
 
 
+
+
     <Button
         android:id="@+id/restartBtn"
         android:layout_width="111dp"
-        android:layout_height="0dp"
+        android:layout_height="51dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:layout_marginBottom="176dp"
-        android:background="#BFDAB4E1"
+        android:background="#DCA392E1"
         android:fontFamily="sans-serif-medium"
         android:shadowColor="#2F343D"
         android:text="Restart"
@@ -25,136 +26,135 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.73"
+        app:layout_constraintHorizontal_bias="0.716"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gif"
-        app:layout_constraintVertical_bias="0.299"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.895"
         tools:fontFamily="casual"
         tools:textSize="20dp" />
 
     <Button
         android:id="@+id/homeBtn"
         android:layout_width="111dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="176dp"
-        android:background="#BFDAB4E1"
+        android:layout_height="51dp"
+        android:background="#E27F6BC8"
         android:fontFamily="sans-serif-medium"
         android:shadowColor="#2F343D"
         android:text="Home"
         android:textColor="#FFFFFF"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/restartBtn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.22"
+        app:layout_constraintHorizontal_bias="0.233"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gif"
-        app:layout_constraintVertical_bias="0.299"
+        app:layout_constraintTop_toTopOf="@+id/restartBtn"
+        app:layout_constraintVertical_bias="0.895"
         tools:fontFamily="casual"
         tools:textSize="20dp" />
 
-    <TextView
-        android:id="@+id/player_one_score"
-        android:layout_width="192dp"
-        android:layout_height="71dp"
-        android:text="      Player 1 :"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/player_two_score"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.187" />
 
     <TextView
         android:id="@+id/player_two_score"
-        android:layout_width="162dp"
-        android:layout_height="68dp"
-        android:numeric="decimal"
-        android:text="     Player 2 :"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.185" />
+        android:layout_width="188dp"
+        android:layout_height="86dp"
 
-    <View
-        android:id="@+id/view4"
-        android:layout_width="0dp"
-        android:layout_height="4dp"
-        android:background="#262F70"
-        app:layout_constraintBottom_toTopOf="@+id/eight"
-        app:layout_constraintEnd_toEndOf="@+id/three"
-        app:layout_constraintStart_toStartOf="@+id/one"
-        app:layout_constraintTop_toTopOf="@+id/eight" />
+        android:width="200dp"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="Player 2 Points : 0"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/player_one_score"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toEndOf="@+id/player_one_score"
+        app:layout_constraintTop_toTopOf="@+id/player_one_score"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/nine"
+        android:id="@+id/player_one_score"
+        android:layout_width="188dp"
+        android:layout_height="86dp"
+        android:width="200dp"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="Player 1 Points : 0"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.067"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.105" />
+
+    <TextView
+        android:id="@+id/three"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:layout_marginTop="4dp"
-        android:background="#EBB7CCC8"
+        android:layout_marginTop="320dp"
+        android:background="@color/white1"
         android:gravity="center"
         android:textColor="#000000"
         android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/eight"
-        app:layout_constraintTop_toBottomOf="@+id/six" />
+        app:layout_constraintStart_toEndOf="@+id/two"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/eight"
         android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="4dp"
-        android:background="#A7CDC6"
+        android:layout_height="75dp"
+        android:layout_marginTop="2dp"
         android:gravity="center"
         android:textColor="#000000"
         android:textSize="36sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/nine"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/seven"
-        app:layout_constraintTop_toBottomOf="@+id/five"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/four"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="12dp"
-        android:background="#A7CDC6"
-        android:gravity="center"
-        android:textColor="#000000"
-        android:textSize="36sp"
-        app:layout_constraintEnd_toStartOf="@+id/five"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/one" />
+        app:layout_constraintTop_toBottomOf="@+id/five" />
 
     <TextView
         android:id="@+id/seven"
         android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="4dp"
-        android:background="#EBB7CCC8"
+        android:layout_height="75dp"
+        android:layout_marginTop="2dp"
+        android:background="#CBD4E6E3"
         android:gravity="center"
         android:textColor="#000000"
         android:textSize="36sp"
+        app:layout_constraintBottom_toTopOf="@+id/homeBtn"
         app:layout_constraintEnd_toStartOf="@+id/eight"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/four" />
+        app:layout_constraintTop_toBottomOf="@+id/four"
+        app:layout_constraintVertical_bias="0.01" />
+
+    <TextView
+        android:id="@+id/nine"
+        android:layout_width="81dp"
+        android:layout_height="77dp"
+        android:layout_marginStart="4dp"
+        android:background="#CBD4E6E3"
+        android:gravity="center"
+        android:textColor="#000000"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toTopOf="@+id/restartBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/eight"
+        app:layout_constraintTop_toBottomOf="@+id/six"
+        app:layout_constraintVertical_bias="0.01" />
 
     <TextView
         android:id="@+id/one"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:layout_marginTop="272dp"
-        android:background="#EBB7CCC8"
+        android:layout_marginTop="320dp"
+        android:layout_marginEnd="4dp"
+        android:background="#CBD4E6E3"
         android:gravity="center"
         android:textColor="#000000"
         android:textSize="36sp"
@@ -165,39 +165,25 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/two"
+        android:id="@+id/five"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:layout_marginTop="272dp"
-        android:background="#A7CDC6"
+        android:layout_marginTop="4dp"
+        android:background="#CBD4E6E3"
         android:gravity="center"
         android:textColor="#000000"
         android:textSize="36sp"
-        app:layout_constraintEnd_toStartOf="@+id/three"
+        app:layout_constraintBottom_toBottomOf="@+id/six"
+        app:layout_constraintEnd_toStartOf="@+id/six"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/one"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/three"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="272dp"
-        android:background="#EBB7CCC8"
-        android:gravity="center"
-        android:textColor="#000000"
-        android:textSize="36sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/two"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/four"
+        app:layout_constraintTop_toTopOf="@+id/view3"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/six"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:layout_marginTop="12dp"
-        android:background="#A7CDC6"
         android:gravity="center"
         android:textColor="#000000"
         android:textSize="36sp"
@@ -207,28 +193,33 @@
         app:layout_constraintTop_toBottomOf="@+id/three" />
 
     <TextView
-        android:id="@+id/five"
+        android:id="@+id/four"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:layout_marginTop="12dp"
-        android:background="#EBB7CCC8"
+        android:layout_marginEnd="4dp"
         android:gravity="center"
         android:textColor="#000000"
         android:textSize="36sp"
-        app:layout_constraintEnd_toStartOf="@+id/six"
+        app:layout_constraintBottom_toBottomOf="@+id/five"
+        app:layout_constraintEnd_toStartOf="@+id/five"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/four"
-        app:layout_constraintTop_toBottomOf="@+id/two" />
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/five"
+        app:layout_constraintVertical_bias="0.0" />
 
-    <View
-        android:id="@+id/view"
-        android:layout_width="4dp"
-        android:layout_height="0dp"
-        android:background="#262F70"
-        app:layout_constraintBottom_toBottomOf="@+id/seven"
-        app:layout_constraintEnd_toStartOf="@+id/two"
+    <TextView
+        android:id="@+id/two"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="320dp"
+        android:gravity="center"
+        android:textColor="#000000"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toStartOf="@+id/three"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/one"
-        app:layout_constraintTop_toTopOf="@+id/one" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <View
         android:id="@+id/view2"
@@ -237,8 +228,10 @@
         android:background="#262F70"
         app:layout_constraintBottom_toBottomOf="@+id/seven"
         app:layout_constraintEnd_toStartOf="@+id/three"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/two"
-        app:layout_constraintTop_toTopOf="@+id/one" />
+        app:layout_constraintTop_toTopOf="@+id/one"
+        app:layout_constraintVertical_bias="0.0" />
 
     <View
         android:id="@+id/view3"
@@ -247,9 +240,32 @@
         android:background="#262F70"
         app:layout_constraintBottom_toBottomOf="@+id/two"
         app:layout_constraintEnd_toEndOf="@+id/three"
-        app:layout_constraintStart_toStartOf="@+id/one"
-        app:layout_constraintTop_toBottomOf="@+id/two" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/one" />
 
+    <View
+        android:id="@+id/view4"
+        android:layout_width="0dp"
+        android:layout_height="4dp"
+        android:background="#262F70"
+        app:layout_constraintBottom_toTopOf="@+id/eight"
+        app:layout_constraintEnd_toEndOf="@+id/three"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/one"
+        app:layout_constraintTop_toTopOf="@+id/eight"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="4dp"
+        android:layout_height="0dp"
+        android:background="#262F70"
+        app:layout_constraintBottom_toBottomOf="@+id/seven"
+        app:layout_constraintEnd_toStartOf="@+id/two"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/one"
+        app:layout_constraintTop_toTopOf="@+id/one"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/start_new_game_button"
@@ -264,28 +280,47 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="258dp"
-        android:layout_height="82dp"
-        android:layout_marginEnd="136dp"
-        android:text="Two Players"
+        android:layout_width="216dp"
+        android:layout_height="74dp"
+        android:gravity="center"
+        android:text="TWO PLAYERS"
         android:textColor="#262F70"
+        android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.104"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.024"
+        app:layout_constraintVertical_bias="0.019"
         tools:fontFamily="sans-serif-smallcaps"
         tools:textSize="30dp" />
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="77dp"
-        android:layout_height="47dp"
+        android:layout_width="83dp"
+        android:layout_height="56dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.425"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.225"
+        app:layout_constraintVertical_bias="0.209"
         app:srcCompat="@drawable/vs" />
+
+    <TextView
+        android:id="@+id/tie"
+        android:layout_width="233dp"
+        android:layout_height="77dp"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:text="Tie !"
+        android:textColor="#A61A1A"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/two"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.528"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="0.0" />
 </android.support.constraint.ConstraintLayout>

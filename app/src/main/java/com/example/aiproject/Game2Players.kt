@@ -17,7 +17,9 @@ class Game2Players {
         intArrayOf(0, 0, 0),
         intArrayOf(0, 0, 0)
     )
-
+    fun isDraw(): Boolean {
+        return isEnd() == null && availableBox().size == 0
+    }
     fun resetGame() {
         board = arrayOf(
             intArrayOf(0, 0, 0),
@@ -65,11 +67,16 @@ class Game2Players {
         }
         return resLine
     }
+    private fun availableBox(): ArrayList<Position> {
+        var available: ArrayList<Position> = arrayListOf()
 
+        for (i in board.indices) {
+            for (j in board[i].indices)
+                if (board[i][j] == 0)
+                    available.add(Position(i, j))
+
+        }
+        return available
+    }
 }
 
-fun main() {
-    var playerTurn = 1
-    playerTurn *= -1 - 3
-    print(playerTurn)
-}
