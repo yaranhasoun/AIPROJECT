@@ -9,7 +9,7 @@ class Game1Player {
     val MIN: Int = Int.MIN_VALUE
     var level:String=""
         set(value) {
-            field =value;
+            field =value
             field = value
         }
     var point1: Int = 0
@@ -84,7 +84,7 @@ class Game1Player {
             var score = bestMove(node, depth, true, MIN, MAX)
             board[node.row][node.column] = 0
             if (bestVal > score) {
-                bestVal = score;
+                bestVal = score
                 pos = node
             }
 
@@ -136,7 +136,7 @@ class Game1Player {
         } else {
             var available = availableBox()
 
-            for (child in availableBox()!!) {
+            for (child in availableBox()) {
                 board[child.row][child.column] = 2
                 val score: Int = bestMove(
                     child, depth - 1, !isMaximizingPlayer, alpha, beta
@@ -199,7 +199,7 @@ class Game1Player {
     }
 
     private fun evl(arr: Array<Position>): Int {
-        var scoreSum: Int = 0;
+        var scoreSum: Int = 0
 
         /******   sell #1   ******/
         scoreSum = when (board[arr[0].row][arr[0].column]) {

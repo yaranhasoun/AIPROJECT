@@ -8,7 +8,7 @@ import android.support.v7.app.AppCompatActivity
 import android.widget.Button
 import android.widget.TextView
 
-class twoPlayers : AppCompatActivity() {
+class TwoPlayers : AppCompatActivity() {
 
     private lateinit var game: Game2Players
     private lateinit var one: TextView
@@ -93,7 +93,7 @@ class twoPlayers : AppCompatActivity() {
         }
 
         winningBoxes.forEach { box ->
-            box.background = ContextCompat.getDrawable(MainActivity2@ this, background)
+            box.background = ContextCompat.getDrawable(this, background)
         }
     }
 

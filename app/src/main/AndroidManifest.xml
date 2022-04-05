@@ -28,7 +28,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".twoPlayers"
+            android:name=".TwoPlayers"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

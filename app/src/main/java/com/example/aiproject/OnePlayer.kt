@@ -7,7 +7,7 @@ import android.support.v4.content.ContextCompat
 import android.widget.Button
 import android.widget.TextView
 
-class OnePlayer : AppCompatActivity() {
+class OnePlayer : AppCompatActivity()  {
     private lateinit var game: Game1Player
     private lateinit var one: TextView
     private lateinit var two: TextView
@@ -138,7 +138,7 @@ class OnePlayer : AppCompatActivity() {
         }
 
         winningBoxes.forEach { box ->
-            box.background = ContextCompat.getDrawable(onePlayer@ this, background)
+            box.background = ContextCompat.getDrawable(this, background)
         }
     }
     private fun resetBoard() {
